@@ -1,0 +1,55 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+  datasource:
+         driverClassName: com.mysql.cj.jdbc.Driver
+         url: jdbc:mysql://localhost:3306/internship
+         username: root
+         password: ilija
+         platform: mysql
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate: 
+        format_sql: true
+        jdbc.lob.non_contextual_creation: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+      
+server:
+  port: 8081
+
+cloud:
+    aws:
+        credentials:
+            access-key: AKIA26TT5MPZWXMENJCV
+            secret-key: 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
+        region:
+            auto: false
+            static: us-east-2
+
+jwt:
+  rsa:
+    publicKey: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAypXaRGQ3gWWvmDb4BQ4L
+      xLCprxsfY8h5eQj1anlvncC2uQ4rglCh8Jn0CZdFltpSUmm1eC+JngcZMg8bKo0P
+      gFhIrtUNc4QPPJGeunLSoUoPc4Wg4kIRwYmpRJaRgrYruE6XHVL8yVzdS9dHlFdb
+      /4oW72fFkOLoOKlnzdnSeoq46cTKsy4U03PJbAg7IJ792rMqViWIV1A6ZuRLwTR6
+      5rKgKHeRqn2luT03mqswwS3mFhVO4+MxvgVUriBAXFuDaZPqdsfsCjo3ODobOkCs
+      E35P9eJ8UOc7X5wj8P6wxR/OQXxhhj2Ayz8VUldMy8lPLQrZkqyCp7jNVL1ilLFc
+      kxkFis89KkOS/8v+KqIlYWfvqTllG6eHfgllioK4O4bFGiInvDpJBBDP+vrpGk1j
+      n+Gx8C6ScSg3dMIC8D36MCEFwgDEiKHGbiCEQepSLJ/aL7YL6eicMNKCd6rdAJrJ
+      er5gwsc46GxQQ4AFU3v+GyUI+MuUsnbKfnttOqOzphOLAgMBAAE=
+      -----END PUBLIC KEY-----
+
+
+
+constants:
+  authService: localhost:8082
+  validation.name.NotEmpty: Please fill in Username
+  validation.password.NotEmpty: Please fill in Password
+  validation.timestamp.NotNull: Please fill in Date
+  validation.imageData.NotNull: Please fill in Image
+  validation.uploader.NotEmpty: Please fill in Uploader

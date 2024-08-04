@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Uploaded images</h1>
+	<section class="searchDiv">
+		<div class="inputWrapper">
+			<input type="number" [(ngModel)]="messageId" placeholder="Type in image ID" (ngModelChange)="hideClearSearchButton()"/>
+			<button class="clearButton" id="clearSearch" (click)="getAllMessages()" hidden>x</button>
+		</div>
+		<button class="button" (click)="getMessageById()">Search</button>
+	</section>
+	<div class="table-wrapper" *ngIf="messages">
+		<table>
+			<tr>
+				<th>Image data</th>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Timestamp</th>
+				<th></th>
+			</tr>
+			<tr *ngFor="let message of messages">
+				<td><img src="{{'data:image/jpg;base64,' + message.imageData}}"></td>
+				<td>{{message.id}}</td>
+				<td>{{message.uploader}}</td>
+				<td>{{message.timestamp | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+				<td>
+					<button (click)="deleteMessage(message.id)" title="Delete image if it is false positive" class="deleteButton">
+						<img src="../../assets/trash.svg" class="deleteImage">
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--<div *ngIf="!messages">There is no uploaded images</div>-->
+</div>

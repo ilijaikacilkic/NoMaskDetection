@@ -1,0 +1,19 @@
+h1{
+	 text-align: center;
+}
+
+.description-section {
+  background-image: url("../../assets/imageUpload.jpg");
+}
+
+.imageBluredBackground {
+	background-image: url("../../assets/imageUpload.jpg");
+}
+
+form {
+  grid-gap: 10px;
+}
+
+input[type=file]{
+	font-size: 14px;
+}

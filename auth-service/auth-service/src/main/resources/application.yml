@@ -1,0 +1,79 @@
+server:
+  port: 8082
+  
+spring:  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth
+    username: root
+    password: ilija
+    platform: mysql
+ jpa:
+    hibernate.ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate: 
+        format_sql: true
+        jdbc.lob.non_contextual_creation: true
+        dialect: org.hibernate.dialect.MySQL8Dialect  sql:    init:      mode: always
+
+constants:
+  validation.name.NotEmpty: Please fill in Username
+  validation.password.NotEmpty: Please fill in Password
+
+jwt:
+  tokenExpiration: 15
+  rsa:
+    privateKey: |
+      -----BEGIN PRIVATE KEY-----
+      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
+      9HB+mhzYLxqy0a1HBG21HdxKhQ==
+      -----END PRIVATE KEY-----
+    publicKey: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAypXaRGQ3gWWvmDb4BQ4L
+      xLCprxsfY8h5eQj1anlvncC2uQ4rglCh8Jn0CZdFltpSUmm1eC+JngcZMg8bKo0P
+      gFhIrtUNc4QPPJGeunLSoUoPc4Wg4kIRwYmpRJaRgrYruE6XHVL8yVzdS9dHlFdb
+      /4oW72fFkOLoOKlnzdnSeoq46cTKsy4U03PJbAg7IJ792rMqViWIV1A6ZuRLwTR6
+      5rKgKHeRqn2luT03mqswwS3mFhVO4+MxvgVUriBAXFuDaZPqdsfsCjo3ODobOkCs
+      E35P9eJ8UOc7X5wj8P6wxR/OQXxhhj2Ayz8VUldMy8lPLQrZkqyCp7jNVL1ilLFc
+      kxkFis89KkOS/8v+KqIlYWfvqTllG6eHfgllioK4O4bFGiInvDpJBBDP+vrpGk1j
+      n+Gx8C6ScSg3dMIC8D36MCEFwgDEiKHGbiCEQepSLJ/aL7YL6eicMNKCd6rdAJrJ
+      er5gwsc46GxQQ4AFU3v+GyUI+MuUsnbKfnttOqOzphOLAgMBAAE=
+      -----END PUBLIC KEY-----

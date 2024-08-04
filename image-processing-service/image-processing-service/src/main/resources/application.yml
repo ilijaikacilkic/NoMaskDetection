@@ -1,0 +1,37 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+  rabbitmq:
+    addresses: localhost:5672
+
+server:
+  port: 8080
+  
+constants:
+  minImgWidth: 150
+  minImgHeight: 150
+  maxImgWidth: 1200
+  maxImgHeight: 1200
+  rectOverlapThreshold: 10
+  authService: localhost:8082
+  validation.name.NotEmpty: Please fill in Username
+  validation.password.NotEmpty: Please fill in Password
+  validation.timestamp.NotNull: Please fill in Date
+  validation.imageData.NotNull: Please fill in Image
+  validation.uploader.NotEmpty: Please fill in Uploader
+
+jwt:
+  rsa:
+    publicKey: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAypXaRGQ3gWWvmDb4BQ4L
+      xLCprxsfY8h5eQj1anlvncC2uQ4rglCh8Jn0CZdFltpSUmm1eC+JngcZMg8bKo0P
+      gFhIrtUNc4QPPJGeunLSoUoPc4Wg4kIRwYmpRJaRgrYruE6XHVL8yVzdS9dHlFdb
+      /4oW72fFkOLoOKlnzdnSeoq46cTKsy4U03PJbAg7IJ792rMqViWIV1A6ZuRLwTR6
+      5rKgKHeRqn2luT03mqswwS3mFhVO4+MxvgVUriBAXFuDaZPqdsfsCjo3ODobOkCs
+      E35P9eJ8UOc7X5wj8P6wxR/OQXxhhj2Ayz8VUldMy8lPLQrZkqyCp7jNVL1ilLFc
+      kxkFis89KkOS/8v+KqIlYWfvqTllG6eHfgllioK4O4bFGiInvDpJBBDP+vrpGk1j
+      n+Gx8C6ScSg3dMIC8D36MCEFwgDEiKHGbiCEQepSLJ/aL7YL6eicMNKCd6rdAJrJ
+      er5gwsc46GxQQ4AFU3v+GyUI+MuUsnbKfnttOqOzphOLAgMBAAE=
+      -----END PUBLIC KEY-----

@@ -1,0 +1,12 @@
+<div class="imageBluredBackground"></div>
+<div class="container">
+	<form class="form-section" method="post" action="" enctype="multipart/form-data" id="myform">
+		<img src="../../assets/logo.jpeg" class="logo" alt="Logo">
+		<h1>Face detection with mask</h1>
+		<p>Here you can upload image to check if persons on it are wearing masks.</p>
+		<input type="file" id="file" name="file" (change)="onFileSelected($event)"/>
+		<input type="button" class="button" value="Upload" id="but_upload" (click)="onClick($event)"/>
+	</form>
+	<section class="description-section">
+	</section>
+</div>
